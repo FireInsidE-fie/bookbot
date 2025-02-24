@@ -1,24 +1,8 @@
-def word_count(text):
-    count = 0
-
-    for word in text.split():
-        count += 1
-    return count
-
-def character_count(text):
-    characters = {}
-    for line in text:
-        for char in line:
-            char = char.lower()
-            if char in characters:
-                characters[char.lower()] += 1
-            else:
-                characters[char] = 1
-    return characters
+from stats import *
 
 def print_report(path, characters, total_words):
     print(f"[!] - Beginning report for {path}...")
-    print(f"[!] - Total words: {total_words}")
+    print(f"[!] - {total_words} words found in the document")
     for char in characters:
         if char.isalpha():
             print(f"Number of '{char}' in text: {characters[char]}")
